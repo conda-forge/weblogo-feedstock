@@ -1,5 +1,5 @@
 {% set name = "weblogo" %}
-{% set version = "3.7.8" %}
+{% set version = "3.7.9" %}
 {% set license = "MIT" %}
 {% set license_file = "LICENSE.txt" %}
 {% set licenses = [
@@ -19,7 +19,7 @@
   "LICENSE_weblogo_seqio.txt",
   "LICENSE_weblogo_transform.py.txt",
 ] %}
-{% set SEP_CHAR = "/" %}   # [not win]
+{% set SEP_CHAR = "/" %}  # [not win]
 {% set SEP_CHAR = "\\" %}  # [win]
 
 package:
@@ -28,7 +28,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/weblogo-{{ version }}.tar.gz
-  sha256: c6f8ff118ec0c8401a7d4c3c111c0108eee8523b092afe0dccec42e8134622f3
+  sha256: 96cea46dbf1578d39507998bcd9c69eb973d88a98821970248a4b53b2ac44fb9
 
 build:
   number: 0
@@ -67,7 +67,7 @@ about:
   home: https://github.com/WebLogo/weblogo
   summary: 'WebLogo3 : Sequence Logos Redrawn'
   license: MIT
-  license_file: 
+  license_file:
     - LICENSE.txt
     ## Additional licenses
     {% for license in licenses %}
