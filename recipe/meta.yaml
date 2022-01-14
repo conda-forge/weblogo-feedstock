@@ -1,7 +1,14 @@
 {% set name = "weblogo" %}
 {% set version = "3.7.8" %}
-{% set license = "MIT" %}
-{% set license_file = "LICENSE.txt" %}
+{% set sha256 = "c6f8ff118ec0c8401a7d4c3c111c0108eee8523b092afe0dccec42e8134622f3" %}
+
+## Update Additional Licenses (IF NECESSARY)
+#  -----------------------------------------
+#  These were picked from weblogo library, 
+#  after carefully scanning the repository.
+#  If any license is left off, please raise 
+#  a PR to add it to the feedstock.
+#  -----------------------------------------
 {% set licenses = [
   "LICENSE_biopython.txt",
   "LICENSE_BSD-3-clause.txt",
@@ -19,8 +26,13 @@
   "LICENSE_weblogo_seqio.txt",
   "LICENSE_weblogo_transform.py.txt",
 ] %}
+
+## Dynamically assign path separation character 
+#  to the jinja variable SEP_CHAR
 {% set SEP_CHAR = "/" %}   # [not win]
 {% set SEP_CHAR = "\\" %}  # [win]
+
+## RECIPE START
 
 package:
   name: {{ name|lower }}
@@ -28,7 +40,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/weblogo-{{ version }}.tar.gz
-  sha256: c6f8ff118ec0c8401a7d4c3c111c0108eee8523b092afe0dccec42e8134622f3
+  sha256: {{ sha256 }}
 
 build:
   number: 0
@@ -85,9 +97,43 @@ about:
 
     (Also located at http://weblogo.threeplusone.com/manual.html.)
 
+    PyPI: [https://pypi.org/project/weblogo/](https://pypi.org/project/weblogo/)
+
   doc_url: http://weblogo.threeplusone.com/manual.html
   dev_url: https://github.com/WebLogo/weblogo
 
 extra:
   recipe-maintainers:
     - sugatoray
+    ## Maintainers from bioconda
+    #  >>> No identifiable individual maintainer found
+    # - bioconda:weblogo
+
+## RECIPE END
+#
+## NOTE: >> DO NOT REMOVE THIS NOTE TO AVOIDE PLAUSIBLE CONFUSION IN FUTURE
+#
+#  SUMMARY: The three recipes (seqlike, weblogo, python-codon-tables) 
+#           were managed by bioconda channel. Since the creators of 
+#           seqlike wanted it on conda-forge, we ported all three 
+#           libraries from bioconda channel to conda-forge channel, 
+#           with permission from bioconda-core-team. The other two 
+#           libraries (weblogo, python-codon-tables) are dependencies 
+#           of `seqlike`.
+#
+#  TODO: 
+#         1. Remind bioconda team to remove "seqlike" from 
+#            bioconda channel, to complete the transfer of 
+#            "seqlike" from bioconda to conda-forge.
+#
+#         2. Ask the maintainers of bioconda:seqlike whether 
+#            to add them to the maintainers' list here.
+#
+#  See: 
+#    - Comment: 
+#      https://github.com/conda-forge/staged-recipes/pull/17283#issuecomment-1001016875
+#      By: dpryan79 (from bioconda team)
+#    - For more information see this:
+#      https://github.com/conda-forge/staged-recipes/pull/17283#issuecomment-1000523651
+#      
+##-------------------------------------------------------------------------
