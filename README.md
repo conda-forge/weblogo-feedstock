@@ -24,6 +24,8 @@ Please consult the manual for installation instructions and more information:
 
 (Also located at http://weblogo.threeplusone.com/manual.html.)
 
+PyPI: [https://pypi.org/project/weblogo/](https://pypi.org/project/weblogo/)
+
 
 Current build status
 ====================
