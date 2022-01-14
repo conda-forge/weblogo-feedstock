@@ -1,6 +1,6 @@
 {% set name = "weblogo" %}
-{% set version = "3.7.8" %}
-{% set sha256 = "c6f8ff118ec0c8401a7d4c3c111c0108eee8523b092afe0dccec42e8134622f3" %}
+{% set version = "3.7.9" %}
+{% set sha256 = "96cea46dbf1578d39507998bcd9c69eb973d88a98821970248a4b53b2ac44fb9" %}
 
 ## Update Additional Licenses (IF NECESSARY)
 #  -----------------------------------------
@@ -29,7 +29,7 @@
 
 ## Dynamically assign path separation character 
 #  to the jinja variable SEP_CHAR
-{% set SEP_CHAR = "/" %}   # [not win]
+{% set SEP_CHAR = "/" %}  # [not win]
 {% set SEP_CHAR = "\\" %}  # [win]
 
 ## RECIPE START
@@ -43,7 +43,7 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  number: 1
+  number: 0
   noarch: python
   entry_points:
     - weblogo = weblogo._cli:main
@@ -79,7 +79,7 @@ about:
   home: https://github.com/WebLogo/weblogo
   summary: 'WebLogo3 : Sequence Logos Redrawn'
   license: MIT
-  license_file: 
+  license_file:
     - LICENSE.txt
     ## Additional licenses
     {% for license in licenses %}
