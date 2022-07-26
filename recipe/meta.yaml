@@ -1,6 +1,6 @@
 {% set name = "weblogo" %}
-{% set version = "3.7.11" %}
-{% set sha256 = "670043b37a87ab3409a6d79503f9f4e61f894dee58e0c8c4ee3434c2260ed8cf" %}
+{% set version = "3.7.12" %}
+{% set sha256 = "7c6627ca62616500c526782f7c3501257d1689a9bb4d65c34c730edc80528657" %}
 
 ## Update Additional Licenses (IF NECESSARY)
 #  -----------------------------------------
