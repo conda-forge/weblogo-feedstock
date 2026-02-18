@@ -1,6 +1,6 @@
 {% set name = "weblogo" %}
-{% set version = "3.7.12" %}
-{% set sha256 = "7c6627ca62616500c526782f7c3501257d1689a9bb4d65c34c730edc80528657" %}
+{% set version = "3.9.0" %}
+{% set sha256 = "4ea9138b56e55c9adc3b52a2ad950deafba29db96a89f9c8e2d27555f194ba76" %}
 
 ## Update Additional Licenses (IF NECESSARY)
 #  -----------------------------------------
@@ -43,7 +43,7 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  number: 1
+  number: 0
   noarch: python
   entry_points:
     - weblogo = weblogo._cli:main
